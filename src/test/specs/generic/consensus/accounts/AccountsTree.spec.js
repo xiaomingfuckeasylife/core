@@ -320,4 +320,11 @@ describe('AccountsTree', () => {
         test();
     });
 
+    it('can handle multiple persistent trees', (done) => {
+        (async function () {
+            const p1 = AccountsTree.getPersistent();
+            const p2 = AccountsTree.getPersistent();
+        })().then(done, done.fail);
+    });
+
 });
